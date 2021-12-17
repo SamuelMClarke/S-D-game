@@ -134,9 +134,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 586388681557294016, guid: c3f4dbeb31bbc4843a3b1a3eed7f3fa7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7470295020713921832, guid: c3f4dbeb31bbc4843a3b1a3eed7f3fa7, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7470295020713921832, guid: c3f4dbeb31bbc4843a3b1a3eed7f3fa7, type: 3}
       propertyPath: m_LocalScale.x
@@ -148,11 +152,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7470295020713921832, guid: c3f4dbeb31bbc4843a3b1a3eed7f3fa7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.68
+      value: 1.74
       objectReference: {fileID: 0}
     - target: {fileID: 7470295020713921832, guid: c3f4dbeb31bbc4843a3b1a3eed7f3fa7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.09
+      value: -2.45
       objectReference: {fileID: 0}
     - target: {fileID: 7470295020713921832, guid: c3f4dbeb31bbc4843a3b1a3eed7f3fa7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -283,6 +287,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 586388681557294016, guid: c3f4dbeb31bbc4843a3b1a3eed7f3fa7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7430849893312290691, guid: c3f4dbeb31bbc4843a3b1a3eed7f3fa7, type: 3}
       propertyPath: m_Color.b
       value: 0.02180491
@@ -305,11 +313,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7470295020713921832, guid: c3f4dbeb31bbc4843a3b1a3eed7f3fa7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.36
+      value: -4.27
       objectReference: {fileID: 0}
     - target: {fileID: 7470295020713921832, guid: c3f4dbeb31bbc4843a3b1a3eed7f3fa7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.84
+      value: -0.41
       objectReference: {fileID: 0}
     - target: {fileID: 7470295020713921832, guid: c3f4dbeb31bbc4843a3b1a3eed7f3fa7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -356,9 +364,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 586388681557294016, guid: c3f4dbeb31bbc4843a3b1a3eed7f3fa7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7470295020713921832, guid: c3f4dbeb31bbc4843a3b1a3eed7f3fa7, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7470295020713921832, guid: c3f4dbeb31bbc4843a3b1a3eed7f3fa7, type: 3}
       propertyPath: m_LocalScale.x
@@ -544,9 +556,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 586388681557294016, guid: c3f4dbeb31bbc4843a3b1a3eed7f3fa7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7470295020713921832, guid: c3f4dbeb31bbc4843a3b1a3eed7f3fa7, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7470295020713921832, guid: c3f4dbeb31bbc4843a3b1a3eed7f3fa7, type: 3}
       propertyPath: m_LocalScale.x
@@ -720,7 +736,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1830630549
 MonoBehaviour:
@@ -736,6 +752,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   jumpForce: 7
+  platformLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &1850647687
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -747,9 +766,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 586388681557294016, guid: c3f4dbeb31bbc4843a3b1a3eed7f3fa7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7470295020713921832, guid: c3f4dbeb31bbc4843a3b1a3eed7f3fa7, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7470295020713921832, guid: c3f4dbeb31bbc4843a3b1a3eed7f3fa7, type: 3}
       propertyPath: m_LocalScale.x
@@ -808,9 +831,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 586388681557294016, guid: c3f4dbeb31bbc4843a3b1a3eed7f3fa7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7470295020713921832, guid: c3f4dbeb31bbc4843a3b1a3eed7f3fa7, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7470295020713921832, guid: c3f4dbeb31bbc4843a3b1a3eed7f3fa7, type: 3}
       propertyPath: m_LocalScale.x

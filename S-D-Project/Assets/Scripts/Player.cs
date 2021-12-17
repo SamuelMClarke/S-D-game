@@ -8,14 +8,18 @@ public class Player : MonoBehaviour
     public float moveSpeed;
     public float jumpForce;
 
+    [SerializeField] private LayerMask platformLayerMask;
+
     private float horizontalInput;
     private Rigidbody2D rb;
     private bool jumpPressed = false;
+    private CapsuleCollider2D myCollider;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        myCollider = GetComponent<CapsuleCollider2D>();
     }
 
     // Update is called once per frame
@@ -35,8 +39,19 @@ public class Player : MonoBehaviour
 
         if (jumpPressed)
         {
-            rb.velocity = Vector2.up * jumpForce;
+            if (IsGrounded())
+            {
+                rb.velocity = Vector2.up * jumpForce;
+            }
             jumpPressed = false;
         }
+    }
+
+    private bool IsGrounded()
+    {
+        float heightCheck = 0.1f;
+        RaycastHit2D hit = Physics2D.CapsuleCast(myCollider.bounds.center, myCollider.bounds.size, CapsuleDirection2D.Vertical, 0f, Vector2.down, heightCheck, platformLayerMask);
+
+        return hit.collider != null;
     }
 }
