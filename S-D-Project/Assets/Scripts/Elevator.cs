@@ -9,14 +9,25 @@ public class Elevator : MonoBehaviour
     public float ymin;
     public float yspeed;
 
+    [Header("Horizontal")]
+    public float xmax;
+    public float xmin;
+    public float xspeed;
+
     private Rigidbody2D rb;
     private float yinitial;
+    private float xinitial;
+    private float xchange;
+    private float ychange;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        yinitial = rb.position.y;
+        yinitial = rb.transform.position.y;
+        xinitial = rb.transform.position.x;
+        ychange = ymax - ymin;
+        xchange = xmax - xmin;
     }
 
     // Update is called once per frame
@@ -28,8 +39,7 @@ public class Elevator : MonoBehaviour
     void FixedUpdate()
     {
         rb.position = new Vector2(
-              rb.position.x,
-               yinitial + ((ymax - ymin) * Mathf.Sin(yspeed * Time.frameCount)));
-
+            xinitial + (xchange*(Mathf.Sin(xspeed * (Time.time - Mathf.Asin(xspeed)))) + xchange),
+            yinitial + (ychange*(Mathf.Sin(yspeed * (Time.time - Mathf.Asin(yspeed)))) + ychange));
     }
 }
