@@ -7,18 +7,22 @@ public class Elevator : MonoBehaviour
     [Header("Vertical")]
     public float ymax;
     public float ymin;
-    public float yspeed;
+    public float yperiod;
 
     [Header("Horizontal")]
     public float xmax;
     public float xmin;
-    public float xspeed;
+    public float xperiod;
 
     private Rigidbody2D rb;
     private float yinitial;
     private float xinitial;
-    private float xchange;
-    private float ychange;
+    private float yamp;
+    private float yshift;
+    private float yperiodshift;
+    private float xamp;
+    private float xshift;
+    private float xperiodshift;
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +30,12 @@ public class Elevator : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         yinitial = rb.transform.position.y;
         xinitial = rb.transform.position.x;
-        ychange = ymax - ymin;
-        xchange = xmax - xmin;
+        xamp = xmax - xmin;
+        xshift = 0.5f * xamp;
+        xperiodshift = Mathf.Acos(((2 * Mathf.PI) % (2 * Mathf.PI)) / xperiod);
+        yamp = ymax - ymin;
+        yshift = 0.5f * yamp;
+        yperiodshift = Mathf.Asin(((2 * Mathf.PI) % (2 * Mathf.PI)) / yperiod);
     }
 
     // Update is called once per frame
@@ -39,7 +47,8 @@ public class Elevator : MonoBehaviour
     void FixedUpdate()
     {
         rb.position = new Vector2(
-            xinitial + (xchange*(Mathf.Sin(xspeed * (Time.time - Mathf.Asin(xspeed)))) + xchange),
-            yinitial + (ychange*(Mathf.Sin(yspeed * (Time.time - Mathf.Asin(yspeed)))) + ychange));
+            xinitial + xamp * Mathf.Cos((2 * Mathf.PI / xperiod) * (Time.time - xperiodshift)) + xshift,
+            yinitial + yamp * Mathf.Sin((2 * Mathf.PI / yperiod) * (Time.time - yperiodshift)) + yshift
+            );
     }
 }
