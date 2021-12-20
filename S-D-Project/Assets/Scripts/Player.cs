@@ -39,11 +39,11 @@ public class Player : MonoBehaviour
 
         if (jumpPressed)
         {
+            jumpPressed = false;
             if (IsGrounded())
             {
                 rb.velocity = Vector2.up * jumpForce;
             }
-            jumpPressed = false;
         }
     }
 
