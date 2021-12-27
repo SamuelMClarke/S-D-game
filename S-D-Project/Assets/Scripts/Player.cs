@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private bool jumpPressed = false;
     private CapsuleCollider2D myCollider;
+    private bool sprintPressed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,21 @@ public class Player : MonoBehaviour
         {
             jumpPressed = true;
         }
+
+        if (Input.GetKey(KeyCode.LeftControl) && IsGrounded())
+        {
+            sprintPressed = true;
+        }
+
+        if (sprintPressed)
+        {
+            moveSpeed = 14f;
+            sprintPressed = false;
+        }
+        else
+        {
+            moveSpeed = 7f;
+        }
     }
 
     private void FixedUpdate() 
@@ -45,6 +61,7 @@ public class Player : MonoBehaviour
                 rb.velocity = Vector2.up * jumpForce;
             }
         }
+
     }
 
     private bool IsGrounded()
